@@ -1,0 +1,248 @@
+ /*TRANSITIONS*/
+.box {
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+
+}
+#box1 {
+  background-color: red;
+  transition: all 500ms linear;
+}
+#box1:hover {
+  background-color: black;
+  border: 20px solid red;
+  color: white;
+}
+#box2 {
+  background-color: blue;
+  transition-property: width, height, border-radius;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+#box2:hover {
+  background-color: red;
+  border: 20px solid yellow;
+  width: 300px; height: 300px;
+  border-radius: 100%;
+}
+
+#box3 {
+  background-color: yellow;
+}
+
+#box4 {
+  background-color: pink;
+  position: relative;
+  top: -325px;
+  left: 0;
+  z-index: -1;
+  transition: all 1s ease-in-out 1s;
+}
+
+#box3:hover + #box4 {
+  top: -320px;
+  left: 325px;
+}
+/*transform + rotate */
+
+#container {
+  height: 500px;
+  position: relative;
+}
+
+#itemholder {
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  top: 1500px;
+  right: -90px;
+  -webkit-transition: all 1s ease-in-out;
+
+}
+
+#item1, #item2 {
+  width: 120px; height: 120px;
+  border: 2px solid #000;
+  position: absolute;
+  font-size: 9pt;
+  text-align: center;
+  box-shadow: 2px 2px 4px #333;
+  background-color: #eee;
+  -webkit-transition: all 1s ease-in-out;
+ }
+#item1 {
+  top: 10px; right: -10px;
+  z-index: 1;
+  -webkit-transform: rotate(90deg);
+}
+
+#item2 {top: 60px; right: -10px;
+  z-index: 0;
+  -webkit-transform: rotate(45deg);
+}
+
+.image {
+  width: 100px; height: 100px;
+  background-color: #090;
+  margin: 3px auto;
+}
+
+#itemholder:hover {
+  right: 20px;
+}
+#itemholder:hover #item1 {
+  right: 10px;
+  -webkit-transform: rotate(25deg);
+}
+#itemholder:hover #item2 {
+  right: 25px;
+  top: 120px;
+  -webkit-transform: rotate(-15deg);
+}
+
+/*hover effect*/
+
+nav a {
+    position: relative;
+    display: inline-block;
+    margin: 15px 25px;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    font-size: 1.35em;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.go a:before,
+.go a:after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.go a:before {
+    margin-right: 10px;
+    content: '[';
+    -webkit-transform: translate(20px);
+    -moz-transform: translate(20px);
+    transform: translate(20px);
+}
+
+.go a:after {
+    margin-left: 10px;
+    content: ']';
+    -webkit-transform: translate(-20px);
+    -moz-transform: translate(-20px);
+    transform: translate(-20px);
+}
+
+.go a:hover:before,
+.go a:hover:after,
+.go a:focus:before,
+.go a:focus:after {
+    opacity: 1;
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    transform: translate(0px);
+}
+
+
+/* mario */
+.default {
+  max-width: 500px;
+  max-height: 500px;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+#mario {
+  transform: scale(1);
+  transition: transform .2s ease-in-out;
+}
+
+#mario:active {
+   transform: scale(5);
+}
+
+
+.square {
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  }
+#square1 {
+  background-color: green;
+  transition: all 300ms ease-in-out 600ms;
+}
+
+#square1:hover .eye1, #square1:hover .eye2 {
+  margin-top: 50px;
+  height: 1px;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+#square1:hover {
+  border-radius: 100%;
+  background-color: yellow;
+  border: 10px solid black;
+  transform: rotate(360deg);
+
+}
+.eye1 {
+  transition: all 300ms ease-in-out 600ms;
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  margin-top: 4%;
+}
+.eye2 {
+  transition: all 300ms ease-in-out 600ms;
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  margin-top: 4%;
+}
+.eyes {
+  display: flex;
+  justify-content: space-around;
+}
+.mouth {
+  width: 100px;
+  height: 25px;
+  background-color: red;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.mouth div {
+  background-color: white;
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#square1:hover .mouth {
+  height: 50px;
+  background: transparent;
+  border-bottom: 5px solid black;
+  border-radius: 100%;
+
+}
+#square1:hover .mouth div {
+  display: none;
+}
