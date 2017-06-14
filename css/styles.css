@@ -268,3 +268,19 @@ nav a {
     75%  { left: 1000px; bottom: -500px;}
     100% { left: 1300px; bottom: -500px;}
 }
+
+.button {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: 10px solid black;
+  background-color: white;
+}
+
+.button:active {
+    animation: blink .1s ease-in-out infinite;
+}
+@keyframes blink {
+  from { background: #000;}
+  to { background: yellow; }
+}
