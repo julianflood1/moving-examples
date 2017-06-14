@@ -162,8 +162,12 @@ nav a {
 }
 
 #mario {
+  position: absolute;
+  left: 1300px;
+  bottom: -500px;
   transform: scale(1);
   transition: transform .2s ease-in-out;
+  animation: jump 6s linear ;
 }
 
 #mario:active {
@@ -175,11 +179,15 @@ nav a {
   border: 2px solid black;
   width: 200px;
   height: 200px;
-  margin: auto;
   display: flex;
   flex-flow: column;
   justify-content: space-around;
+  animation: fall 300ms ease-in-out;
+  position: absolute;
+  margin-left: 50%;
+  top: 1420px;
   }
+
 #square1 {
   background-color: green;
   transition: all 300ms ease-in-out 600ms;
@@ -245,4 +253,18 @@ nav a {
 }
 #square1:hover .mouth div {
   display: none;
+}
+
+@keyframes fall {
+  0% { top: -220px }
+
+  100% { top:1420px; }
+}
+
+@keyframes jump {
+    0%   { left: 0px; bottom: -500px;}
+    25%  { left: 200px; bottom: -500px;}
+    50%  { left: 850px; bottom: 200px;}
+    75%  { left: 1000px; bottom: -500px;}
+    100% { left: 1300px; bottom: -500px;}
 }
